@@ -49,4 +49,10 @@ $(document).ready(function () {
     $row.append($item, $price, $quantity, $itemTotal);
     return $row;
   }
+
+  // Allow user to delete an item
+  $(document).on('click', '.cancel', function () {
+    $(this).closest('tr').remove();
+    updateTotalPrice();
+  });
 });
