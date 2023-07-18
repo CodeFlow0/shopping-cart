@@ -4,77 +4,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Simple Shopping Cart</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class="container">
-    <h1 class="text-center my-4">Stock Portfolio</h1>
+  <section class="container-sm">
+    <h1 class="text-center my-4 title">Simple Shopping Cart</h1>
     <div class="row">
       <div class="col-12">
-        <table class="table table-responsive">
+        <table class="table table-responsive table-borderless cart">
           <thead>
             <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Shares Owned</th>
-              <th scope="col">Cost per share ($)</th>
-              <th scope="col">Market Price ($)</th>
-              <th scope="col">Market Value</th>
-              <th scope="col">Unrealized Gain/Loss ($)</th>
+              <th scope="col">Item</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="name">Facebook</td>
-              <td class="shares"><input type="number" value="20"></td>
-              <td class="cost"><input type="number" value="50"></td>
-              <td class="marketPrice "><input type="number" value="130"></td>
-              <td class="marketValue"></td>
-              <td class="profit"></td>
-              <td><button class="btn btn-light btn-sm remove">remove</button></td>
+              <td class="item">Salmon</td>
+              <td class="price">$25.00</td>
+              <td class="quantity">QTY <input class="me-2" type="number" value="0"><button
+                  class="btn btn-danger cancel">Cancel</button></td>
+              <td class="item-total">$0.00</td>
             </tr>
             <tr>
-              <td class="name">Amazon</td>
-              <td class="shares"><input type="number" value="5"></td>
-              <td class="cost"><input type="number" value="200"></td>
-              <td class="marketPrice "><input type="number" value="500"></td>
-              <td class="marketValue"></td>
-              <td class="profit"></td>
-              <td><button class="btn btn-light btn-sm remove">remove</button></td>
+              <td class="item">Tuna</td>
+              <td class="price">$15.00</td>
+              <td class="quantity">QTY <input class="me-2" type="number" value="0"><button
+                  class="btn btn-danger cancel">Cancel</button></td>
+              <td class="item-total">$0.00</td>
             </tr>
             <tr>
-              <td class="name">Nvidia</td>
-              <td class="shares"><input type="number" value="100"></td>
-              <td class="cost"><input type="number" value="20"></td>
-              <td class="marketPrice "><input type="number" value="3"></td>
-              <td class="marketValue"></td>
-              <td class="profit"></td>
-              <td><button class="btn btn-light btn-sm remove">remove</button></td>
+              <td class="item">Carp</td>
+              <td class="price">$10.00</td>
+              <td class="quantity">QTY <input class="me-2" type="number" value="0"><button
+                  class="btn btn-danger cancel">Cancel</button></td>
+              <td class="item-total">$0.00</td>
+            </tr>
+            <tr>
+              <td class="item">Beef</td>
+              <td class="price">$35.00</td>
+              <td class="quantity">QTY <input class="me-2" type="number" value="0"><button
+                  class="btn btn-danger cancel">Cancel</button></td>
+              <td class="item-total">$0.00</td>
+            </tr>
+            <tr>
+              <td class="item">Pork</td>
+              <td class="price">$20.00</td>
+              <td class="quantity">QTY <input class="me-2" type="number" value="0"><button
+                  class="btn btn-danger cancel">Cancel</button></td>
+              <td class="item-total">$0.00</td>
+            </tr>
+            <tr>
+              <td class="item"><input type="text"></td>
+              <td class="price"><input type="number"></td>
+              <td class="quantity">QTY <input class="me-2" type="number" value="0"><button
+                  class="btn btn-danger cancel">Cancel</button><button
+                  class="btn btn-success ms-2 create">Create</button>
+              </td>
+              <td class="sub-total">$0.00</td>
+            </tr>
+            <tr>
+              <td class="item">Total Price:</td>
+              <td></td>
+              <td></td>
+              <td class="total-price">$0.00</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <form action="" class="col-12 mt-2 mb-4" id="addStock">
-        <input name="name" type="text" class="mx-2" placeholder="Name" required />
-        <input name="shares" type="number" class="mx-2" placeholder="Shares" required />
-        <input name="cost" type="number" class="mx-2" placeholder="Cost" required />
-        <input name="marketPrice" type="number" class="mx-2" placeholder="Price" required />
-        <button class="btn btn-primary btn-sm">add</button>
-      </form>
-      <div class="col-12 col-md-6">
-        <h3>Portfolio value: $ <span id="portfolioValue"></span></h3>
-      </div>
-      <div class="col-12 col-md-6">
-        <h3>Portfolio gain/loss: $ <span id="portfolioProfit"></span></h3>
-      </div>
     </div>
-  </div>
+  </section>
 
-  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-    crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>
 
